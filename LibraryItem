@@ -1,0 +1,35 @@
+public class LibraryItem {
+    String title;
+    int yearPublished;
+    public LibraryItem(String title, int yearPublished) {
+        this.title = title;
+        this.yearPublished = yearPublished;
+    }
+    public String toString() {
+        return "LibraryItem[title: " + title + " ,yearPublished: " + yearPublished;
+    }
+    static class Book extends LibraryItem {
+        String author;
+        int isbn;
+        public Book(String title,int yearPublished,String author, int isbn) {
+            super(title,yearPublished);
+            this.author = author;
+            this.isbn = isbn;
+        }
+        public String getDetails() {
+            return "Book[title: " + title + ", yearPublished: " + yearPublished + ", author: " + author + ", isbn: " + isbn + "]";
+        }
+    }
+    static class Magazine extends LibraryItem {
+        int issueNumber;
+        String publisher;
+        public Magazine(String title,int yearPublished,int issueNumber,String publisher) {
+            super(title,yearPublished);
+            this.issueNumber = issueNumber;
+            this.publisher = publisher;
+        }
+        public String getDetails() {
+            return "Magazine[title: " + title + "yearPublished: " + yearPublished + ", issueNumber: " + issueNumber + ", publisher: " + publisher + "]";
+        }
+    }
+}
